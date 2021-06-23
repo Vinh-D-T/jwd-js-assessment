@@ -44,6 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
     },
+    {
+      q: 'What is the capital of Australia',
+      o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
+      a: 3,
+    },
+    {
+      q: 'What is the capital of Australia',
+      o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
+      a: 1,
+    },
   ];
 
   // function to Display the quiz questions and answers from the object
@@ -57,6 +67,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     <li class="list-group-item" id="li_${index}_1"><input type="radio" name="radio${index}" id="radio_${index}_1"> ${quizItem.o[1]}</li>
                     <li class="list-group-item"  id="li_${index}_2"><input type="radio" name="radio${index}" id="radio_${index}_2"> ${quizItem.o[2]}</li>
                     <li class="list-group-item"  id="li_${index}_3"><input type="radio" name="radio${index}" id="radio_${index}_3"> ${quizItem.o[3]}</li>
+                    
+                    
                     </ul>
                     <div>&nbsp;</div>`;
       quizWrap.innerHTML = quizDisplay;
