@@ -92,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // call the displayQuiz function
   displayQuiz();
-  const submitButton = document.querySelector('#btnSubmit');
-  submitButton.addEventListener("click", calculateScore());
-  
+  // const submitButton = document.querySelector('#btnSubmit');
+  // submitButton.addEventListener("click", calculateScore());
+
 });

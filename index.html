@@ -67,8 +67,13 @@
     <script src="./js/index.js"></script>
     <script>
       var resetButton = document.getElementById('btnReset');
-      //var formReset = document.getElementById('formId');
+      var formReset = document.getElementById('formId');
       resetButton.onclick= reloadPage;
+      function reloadPage(){
+          reloadForm();
+         window.location.reload();
+          };
+      
       function reloadForm(){
         formReset.reset();
         }
@@ -89,6 +94,7 @@
         }
         
         function reloadPage(){
+          reloadForm();
          window.location.reload();
           };
     </script>
