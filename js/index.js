@@ -63,8 +63,9 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  
   // Calculate the score
-  const calculateScore = () => {
+   const calculateScore = () => {
     let score = 0;
     quizArray.map((quizItem, index) => {
       for (let i = 0; i < 4; i++) {
@@ -72,27 +73,29 @@ window.addEventListener('DOMContentLoaded', () => {
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
         liElement = document.querySelector('#' + li);
-        //console.log(liElement);
+        console.log(liElement);
         radioElement = document.querySelector('#' + r);
-        //console.log(radioElement);
+        console.log(radioElement);
+        console.log(quizItem.a);
         if (quizItem.a == i) {
           //change background color of li element here
-          liElement.style.backgoundColor = "green";
+          
+          liElement.style.backgroundColor = "brown";
         }
 
-        if (radioElement.checked = true) {
+        if (radioElement.checked) {
           // code for task 1 goes here
-          score++;
           
+          score++;        }
         }//score.innerHTML = score;
-      }
+      
     });//return score;
-    document.querySelector('#score').innerHTML = score;
+    document.querySelector('#score').innerHTML = `Your score is: ${score} point --- the correct answer is highline<br><br> `;
   };
 
   // call the displayQuiz function
   displayQuiz();
-  // const submitButton = document.querySelector('#btnSubmit');
-  // submitButton.addEventListener("click", calculateScore());
+  const submitButton = document.querySelector('#btnSubmit');
+  submitButton.addEventListener("click", calculateScore);
 
 });
