@@ -32,7 +32,7 @@
     <div class="container" id="quizBlock" style="display: none">
       <div class="mb-5">
         <h2>Test your knowledge</h2>
-        - Time remaining <span id="time">01:00</span>
+        - Time remaining <span id="times">1:00</span>
       </div>
       <div id="quizWrap"></div>
 
@@ -68,10 +68,29 @@
     <script>
       var resetButton = document.getElementById('btnReset');
       var formReset = document.getElementById('formId');
-      resetButton.onclick= reloadPage;
-      function reloadPage(){
+      resetButton.onclick= reloadForm;
+      function reloadForm(){
         formReset.reset();
-}
+        }
+
+        const startTime = 1;
+        let time = startTime * 60;
+        const countdown = document.getElementById('times');
+        setInterval(updateCoundown, 1000);
+        function updateCoundown()  {
+          const minutes = Math.floor(time/60);
+          let seconds = time % 60;
+          seconds = seconds < 10 ? '0' + seconds : seconds;
+          countdown.innerHTML = `${minutes}:${seconds}`;
+          time--;
+          if(time == 0) {
+            reloadPage();
+          };
+        }
+        
+        function reloadPage(){
+         window.location.reload();
+          };
     </script>
   </body>
 </html>
