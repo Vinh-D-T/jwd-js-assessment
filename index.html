@@ -33,7 +33,7 @@
     <div class="container" id="quizBlock" style="display: none">
       <div class="mb-5">
         <h2>Test your knowledge</h2>
-        - Time remaining <span id="times">1:00</span>
+        - Time remaining (You got 20 second for this quiz:) <span id="times"></span>
       </div>
       <div id="quizWrap"></div>
 
@@ -79,18 +79,19 @@
         formReset.reset();
         }
 
-        const startTime = 1;
-        let time = startTime * 60;
+        const startTime = 0.5;
+        let time = startTime * 40;
         const countdown = document.getElementById('times');
         setInterval(updateCoundown, 1000);
         function updateCoundown()  {
           const minutes = Math.floor(time/60);
-          let seconds = time % 60;
+          let seconds = time % 40;
           seconds = seconds < 10 ? '0' + seconds : seconds;
           countdown.innerHTML = `${minutes}:${seconds}`;
           time--;
           if(time == 0) {
             reloadPage();
+            document.querySelector('#score').innerHTML = `Your score is: ${score} point --- the correct answer is highline<br><br> `;
           };
         }
         
