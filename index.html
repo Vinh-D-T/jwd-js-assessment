@@ -17,6 +17,7 @@
     <title>Quiz</title>
   </head>
   <body>
+    <form action="#" id="formId">
     <div class="container m-5" id="start">
       <div class="card" style="width: 18rem">
         <div class="card-body">
@@ -45,7 +46,7 @@
         <span id="score"></span>
       </div>
     </div>
-
+  </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -64,5 +65,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/index.js"></script>
+    <script>
+      var resetButton = document.getElementById('btnReset');
+      var formReset = document.getElementById('formId');
+      resetButton.onclick= reloadPage;
+      function reloadPage(){
+        formReset.reset();
+}
+    </script>
   </body>
 </html>

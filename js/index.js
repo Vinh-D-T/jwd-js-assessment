@@ -72,14 +72,15 @@ window.addEventListener('DOMContentLoaded', () => {
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
         liElement = document.querySelector('#' + li);
+        //console.log(liElement);
         radioElement = document.querySelector('#' + r);
-
+        //console.log(radioElement);
         if (quizItem.a == i) {
           //change background color of li element here
-          li.style.backgroundColor = "green";
+          liElement.style.backgoundColor = "green";
         }
 
-        if (radioElement.checked) {
+        if (radioElement.checked = true) {
           // code for task 1 goes here
           score++;
           
@@ -93,4 +94,5 @@ window.addEventListener('DOMContentLoaded', () => {
   displayQuiz();
   const submitButton = document.querySelector('#btnSubmit');
   submitButton.addEventListener("click", calculateScore());
+  
 });
